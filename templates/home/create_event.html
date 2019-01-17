@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+<form method="post" action="{% url 'event:event_create' %}">{% csrf_token %}
+    <div class="form-group">
+        <label for="id_name">Event Name:</label> 
+        <input type="text" name="name" maxlength="234" class="form-control" id="id_name">
+        <label for="id_starttime">Starttime: Your format should be like "%Y-%M-%D %H:%M:%S"</label> 
+        <input type="text" name="starttime" required="required" class="form-control" id="id_starttime">
+
+        <label for="id_endtime">Endtime:Your format should be like "%Y-%M-%D %H:%M:%S"</label> 
+        <input type="text" name="endtime" required="required" class="form-control" id="id_endtime">
+        <input type="submit" class="btn btn-primary" style="margin-top:5px;" value="Save">
+    </div>    
+</form>
+{%endblock%}
